@@ -3,7 +3,7 @@ import '../styles/App.css';
 
 const App = () => {
   // write your code here 
-  const [input,setInput] = React.useState(0);
+  const [input,setInput] = React.useState();
   const [time,setTime] = React.useState(0);
   const handleUserKeyPress = (e)=>{
     if(e.key !== "Enter" || isNaN(Number(input))) return;
