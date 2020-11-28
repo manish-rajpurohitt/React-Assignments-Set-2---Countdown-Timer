@@ -7,7 +7,11 @@ const App = () => {
   const [time,setTime] = React.useState(0);
   const handleUserKeyPress = (e)=>{
     
-    if(e.key !== "Enter" || isNaN(Number(input)) || Number(input) < 0) return;
+    if(e.key !== "Enter" || Number(input) < 0) return;
+    if (isNaN(Number(input))) {
+      setTime(0);
+      return;
+    }
     
     setTime(parseInt(input));
   }
