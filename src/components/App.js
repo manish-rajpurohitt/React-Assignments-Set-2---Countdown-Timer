@@ -3,18 +3,19 @@ import '../styles/App.css';
 
 const App = () => {
   // write your code here 
-  const [input,setInput] = React.useState(0);
+  const [input,setInput] = React.useState();
   const [time,setTime] = React.useState(0);
   const handleUserKeyPress = (e)=>{
-    console.log("inhandlePress",Number(time));
+   
     if(e.key !== "Enter" || isNaN(Number(input))) return;
-    console.log("if passed")
+    
     setTime(parseInt(input));
   }
   useEffect(() => {
     const timer=setTimeout(() => {
       if(time > 0 )
       setTime(time-1);
+      else setTime(0);
     }, 1000);
     return () => clearTimeout(timer);
   },[time]);
