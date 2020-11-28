@@ -6,9 +6,7 @@ const App = () => {
   const [input,setInput] = React.useState(0);
   const [time,setTime] = React.useState(0);
   const handleUserKeyPress = (e)=>{
-    console.log("inhandlePress",Number(time));
     if(e.key !== "Enter" || isNaN(Number(input))) return;
-    console.log("if passed")
     setTime(parseInt(input));
   }
   useEffect(() => {
